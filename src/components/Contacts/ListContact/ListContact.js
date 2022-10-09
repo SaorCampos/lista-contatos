@@ -51,12 +51,12 @@ let ListContact = () => {
                                                         Numero: <span className="fw-bold">987654321</span>
                                                     </li>
                                                     <li className="list-group-item list-group-item-action">
-                                                        E-mail: <span className="fw-bold">eu@eu-email.com</span>
+                                                        Cidade: <span className="fw-bold">Fortaleza</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div className="col-md-1 d-flex flex-column align-items-center">
-                                                <Link to={'/contatos/verContato/:contatoId'} className="btn btn-warning my-1">
+                                                <Link to={'/Contacts/ViewContact/:contatoId'} className="btn btn-warning my-1">
                                                     <i className="fa fa-eye"/>
                                                 </Link>
                                                 <Link to={'/Contacts/EditContact/:contatoId'} className="btn btn-primary my-1">
