@@ -59,7 +59,7 @@ let ListContact = () => {
                                                 <Link to={'/contatos/verContato/:contatoId'} className="btn btn-warning my-1">
                                                     <i className="fa fa-eye"/>
                                                 </Link>
-                                                <Link to={'/contatos/editarContato/:contatoId'} className="btn btn-primary my-1">
+                                                <Link to={'/Contacts/EditContact/:contatoId'} className="btn btn-primary my-1">
                                                     <i className="fa fa-pencil"/>
                                                 </Link>
                                                 <button className="btn btn-danger my-1">
