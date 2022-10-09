@@ -39,7 +39,7 @@ let ListContact = () => {
                     <div className="grid">
                         <div className="row ms-5">
                             <div className="col-md-6">
-                                <div className="card">
+                                <div className="card my-2">
                                     <div className="card-body">
                                         <div className="row align-items-center d-flex justify-content-around">
                                             <div className="col-md-7">
