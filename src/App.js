@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import {Routes, Route, Navigate} from 'react-router-dom'
-import AddContact from './components/AddContact/AddContact';
-import './components/NavBar/NavBar';
 import NavBar from './components/NavBar/NavBar';
+import AddContact from './components/Contacts/AddContact/AddContact';
+import './components/Contacts/ListContact/ListContact';
+import ListContact from './components/Contacts/ListContact/ListContact';
 
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
     <React.Fragment>
     <NavBar/>
     <Routes>
-      <Route path={'/addContact'} element={AddContact()}/>
+      <Route path={'/'} element={<Navigate to={'./Contacts/ListContact'}/>} />
+      <Route path={'/Contacts/ListContact'} element={ListContact()}/>
+      <Route path={'/Contacts/AddContact'} element={AddContact()}/>
     </Routes>
   </React.Fragment>
   );
