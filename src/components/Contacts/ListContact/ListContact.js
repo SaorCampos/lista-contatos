@@ -5,7 +5,6 @@ let ListContact = () => {
     const [data, setData] = useState([{}]);
     useEffect(() => {
         getContacts();
-        console.log(data);
     }, []);
     const getContacts = async () => {
         await axios.get('http://localhost:8000/contatos')
@@ -62,7 +61,7 @@ let ListContact = () => {
                                                 <div className="row align-items-center d-flex justify-content-around">
                                                     <div className="col-md-7">
                                                         <ul className="list-group">
-                                                        <li className="list-group-item list-group-item-action">
+                                                            <li className="list-group-item list-group-item-action">
                                                                 Id: <span className="fw-bold">{user.id}</span>
                                                             </li>
                                                             <li className="list-group-item list-group-item-action">
@@ -77,10 +76,10 @@ let ListContact = () => {
                                                         </ul>
                                                     </div>
                                                     <div className="col-md-1 d-flex flex-column align-items-center">
-                                                        <Link to={'/Contacts/ViewContact/user.id'} className="btn btn-warning my-1">
+                                                        <Link to={`/Contacts/ViewContact/${user.id}`} className="btn btn-warning my-1">
                                                             <i className="fa fa-eye"/>
                                                         </Link>
-                                                        <Link to={'/Contacts/EditContact/user.id'} className="btn btn-primary my-1">
+                                                        <Link to={`/Contacts/EditContact/${user.id}`} className="btn btn-primary my-1">
                                                             <i className="fa fa-pencil"/>
                                                         </Link>
                                                         <button onClick={() => handleDelete(user.id)} className="btn btn-danger my-1">
@@ -93,7 +92,6 @@ let ListContact = () => {
                                     </div>
                                 ))
                             }
-                            
                         </div>
                     </div>
                 </div>
