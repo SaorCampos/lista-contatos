@@ -14,6 +14,7 @@ let ListContact = () => {
     const handleDelete = async(id) => {
         await axios.delete('http://localhost:8000/contatos/'+ id)
             .then(response => alert('Deletado com Sucesso'));
+            getContacts();
     };
     return(
         <React.Fragment>
