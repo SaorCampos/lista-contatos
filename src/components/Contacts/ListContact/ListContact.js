@@ -1,6 +1,16 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 let ListContact = () => {
+    const [data, setData] = useState([{}]);
+    useEffect(() => {
+        getContacts();
+        console.log(data);
+    }, []);
+    const getContacts = async () => {
+        await axios.get('http://localhost:8000/contatos')
+        .then(response => setData(response.data));
+    };
     return(
         <React.Fragment>
             <section className="list-contact p-3">
@@ -34,42 +44,51 @@ let ListContact = () => {
                     </div>
                 </div>
             </section>
+            
             <section className="contact-list">
                 <div className="contanier">
                     <div className="grid">
                         <div className="row ms-5">
-                            <div className="col-md-6">
-                                <div className="card my-2">
-                                    <div className="card-body">
-                                        <div className="row align-items-center d-flex justify-content-around">
-                                            <div className="col-md-7">
-                                                <ul className="list-group">
-                                                    <li className="list-group-item list-group-item-action">
-                                                        Nome: <span className="fw-bold">Eu</span>
-                                                    </li>
-                                                    <li className="list-group-item list-group-item-action">
-                                                        Numero: <span className="fw-bold">987654321</span>
-                                                    </li>
-                                                    <li className="list-group-item list-group-item-action">
-                                                        Cidade: <span className="fw-bold">Fortaleza</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div className="col-md-1 d-flex flex-column align-items-center">
-                                                <Link to={'/Contacts/ViewContact/:contatoId'} className="btn btn-warning my-1">
-                                                    <i className="fa fa-eye"/>
-                                                </Link>
-                                                <Link to={'/Contacts/EditContact/:contatoId'} className="btn btn-primary my-1">
-                                                    <i className="fa fa-pencil"/>
-                                                </Link>
-                                                <button className="btn btn-danger my-1">
-                                                    <i className="fa fa-trash"/>
-                                                </button>
+                            {
+                                data && data.map(user =>(
+                                    <div className="col-md-6">
+                                        <div className="card my-2">
+                                            <div className="card-body">
+                                                <div className="row align-items-center d-flex justify-content-around">
+                                                    <div className="col-md-7">
+                                                        <ul className="list-group">
+                                                        <li className="list-group-item list-group-item-action">
+                                                                Id: <span className="fw-bold">{user.id}</span>
+                                                            </li>
+                                                            <li className="list-group-item list-group-item-action">
+                                                                Nome: <span className="fw-bold">{user.nome}</span>
+                                                            </li>
+                                                            <li className="list-group-item list-group-item-action">
+                                                                Numero: <span className="fw-bold">{user.numero}</span>
+                                                            </li>
+                                                            <li className="list-group-item list-group-item-action">
+                                                                Cidade: <span className="fw-bold">{user.cidade}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="col-md-1 d-flex flex-column align-items-center">
+                                                        <Link to={'/Contacts/ViewContact/:contatoId'} className="btn btn-warning my-1">
+                                                            <i className="fa fa-eye"/>
+                                                        </Link>
+                                                        <Link to={'/Contacts/EditContact/:contatoId'} className="btn btn-primary my-1">
+                                                            <i className="fa fa-pencil"/>
+                                                        </Link>
+                                                        <button className="btn btn-danger my-1">
+                                                            <i className="fa fa-trash"/>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                ))
+                            }
+                            
                         </div>
                     </div>
                 </div>
