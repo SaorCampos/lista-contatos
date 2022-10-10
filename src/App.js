@@ -15,8 +15,8 @@ function App() {
       <Route path={'/'} element={<Navigate to={'./Contacts/ListContact'}/>} />
       <Route path={'/Contacts/ListContact'} element={ListContact()}/>
       <Route path={'/Contacts/AddContact'} element={AddContact()}/>
-      <Route path={'Contacts/EditContact/:contatoId'} element={EditContact()}/>
-      <Route path={'Contacts/ViewContact/:contatoId'} element={ViewContact()}/>
+      <Route path={'Contacts/EditContact/id'} element={EditContact()}/>
+      <Route path={'Contacts/ViewContact/id'} element={ViewContact()}/>
     </Routes>
   </React.Fragment>
   );

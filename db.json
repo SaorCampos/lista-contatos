@@ -1,46 +1,22 @@
 {
   "contatos": [
     {
-      "id": 1,
       "nome": "Eu",
       "numero": "987654321",
-      "cidade": "Fortaleza"
+      "cidade": "Fortaleza",
+      "id": 1
     },
     {
-      "id": 2,
       "nome": "Mãe",
       "numero": "978654321",
-      "cidade": "Fortaleza"
+      "cidade": "Fortaleza",
+      "id": 2
     },
     {
       "nome": "Pai",
       "numero": "976854321",
       "cidade": "Fortaleza",
       "id": 3
-    },
-    {
-      "nome": "Avó",
-      "numero": "976584321",
-      "cidade": "Russas",
-      "id": 4
-    },
-    {
-      "nome": "Cremosa",
-      "numero": "976548321",
-      "cidade": "Fortaleza",
-      "id": 5
-    },
-    {
-      "nome": "Merciaria",
-      "numero": "30456874",
-      "cidade": "Fortaleza",
-      "id": 6
-    },
-    {
-      "nome": "Black Gate ",
-      "numero": "908765432",
-      "cidade": "Fortaleza",
-      "id": 7
     }
   ]
 }

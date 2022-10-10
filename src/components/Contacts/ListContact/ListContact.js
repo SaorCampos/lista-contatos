@@ -11,6 +11,10 @@ let ListContact = () => {
         await axios.get('http://localhost:8000/contatos')
         .then(response => setData(response.data));
     };
+    const handleDelete = async(id) => {
+        await axios.delete('http://localhost:8000/contatos/'+ id)
+            .then(response => alert('Deletado com Sucesso'));
+    };
     return(
         <React.Fragment>
             <section className="list-contact p-3">
@@ -72,13 +76,13 @@ let ListContact = () => {
                                                         </ul>
                                                     </div>
                                                     <div className="col-md-1 d-flex flex-column align-items-center">
-                                                        <Link to={'/Contacts/ViewContact/:contatoId'} className="btn btn-warning my-1">
+                                                        <Link to={'/Contacts/ViewContact/user.id'} className="btn btn-warning my-1">
                                                             <i className="fa fa-eye"/>
                                                         </Link>
-                                                        <Link to={'/Contacts/EditContact/:contatoId'} className="btn btn-primary my-1">
+                                                        <Link to={'/Contacts/EditContact/user.id'} className="btn btn-primary my-1">
                                                             <i className="fa fa-pencil"/>
                                                         </Link>
-                                                        <button className="btn btn-danger my-1">
+                                                        <button onClick={() => handleDelete(user.id)} className="btn btn-danger my-1">
                                                             <i className="fa fa-trash"/>
                                                         </button>
                                                     </div>
