@@ -4,13 +4,15 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 
-let ViewContact = (id) => {
-    const getContact = async () => {
-        await axios.get('http://localhost:8000/contatos/')
+let ViewContact = () => {
+    const [data, setData] = useState([{}]);
+    useEffect(() => {
+        getContacts();
+    }, []);
+    const getContacts = async () => {
+        await axios.get('http://localhost:8000/contatos')
         .then(response => setData(response.data));
     };
-    let {} = useParams(getContact());
-    let [data, setData] = useState([{}]);
 
     return (
         <React.Fragment>
