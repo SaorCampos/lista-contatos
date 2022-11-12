@@ -28,6 +28,18 @@ let ListContact = () => {
             getContacts();
         });
     };
+    const contactFilter = (name) => {
+        let filteredContact = [];
+        if(name === ''){
+            getContacts();
+        }
+        for(let i in data){
+            if(data[i].data.name.includes(name)){
+                filteredContact.push(data[i]);
+            }
+        }
+        setData(filteredContact);
+    };
     return(
         <React.Fragment>
             <section className="list-contact p-3">
@@ -47,7 +59,7 @@ let ListContact = () => {
                                 <form className="row my-2">
                                     <div className="col">
                                         <div className="mb-2">
-                                            <input type="text" className="form-control" placeholder="Procurar Contato" />
+                                            <input contactFilter={contactFilter} type="text" className="form-control" placeholder="Procurar Contato" />
                                         </div>
                                     </div>
                                     <div className="col">
